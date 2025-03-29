@@ -1,0 +1,160 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  
+    /* Moving Gradient Background */
+    animation: gradient-animation 10s infinite alternate;
+    background: linear-gradient(45deg, #ff7f50, #1e90ff, #32cd32);
+    background-size: 300% 300%;
+    color: #fff;
+  }
+  
+  /* Gradient Animation */
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  header h1 {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+  }
+  
+  form label {
+    display: block;
+    margin: 10px 0 5px;
+  }
+  
+  form input, form select, form button {
+    font-size: 1rem;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  form button {
+    background: #32cd32;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  form button:hover {
+    background-color: #228b22;
+    transform: scale(1.05);
+  }
+  
+  /* Ripple Effect Styling */
+  button::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.5); /* Ripple color */
+    border-radius: 50%; /* Makes the ripple circular */
+    transform: scale(0);
+    opacity: 0.8;
+    animation: ripple-animation 0.6s ease-out;
+    pointer-events: none; /* Prevent interference with other elements */
+  }
+  
+  @keyframes ripple-animation {
+    to {
+      transform: scale(4); /* How big the ripple expands */
+      opacity: 0; /* Fades out */
+    }
+  }
+  
+  section#task-list ul {
+    width: 100%;
+    max-width: 600px;
+    list-style: none;
+    padding: 0;
+  }
+  
+  section#task-list li {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .task-actions button {
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .task-actions button:hover {
+    background-color: #dc143c;
+    transform: scale(1.1);
+  }
+  
+  /* Mouse Trail Styling */
+  .mouse-trail {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    pointer-events: none; /* Prevent interference with other elements */
+    box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.8);
+    animation: fade 0.5s ease-out forwards;
+  }
+  
+  /* Fade-out animation for Mouse Trail */
+  @keyframes fade {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+  }
+  footer {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    color: #fff;
+    position: fixed; /* Keeps the footer always at the bottom */
+    bottom: 0;
+    left: 0;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow above the footer */
+    font-size: 0.9rem;
+  }
+  
+  
